@@ -43,21 +43,24 @@ while continue_reading:
         # Print UID
         print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
 
-        # Read all 16 pages of Ultralight card, was 64
-        (block, data) = MIFAREReader.MFRC522_Read(256)
+        try:
+            # Read all 16 pages of Ultralight card
+        	(block, data) = MIFAREReader.MFRC522_Read(256)
 
-        # Pull out the UID
-        uid_dec = data[0:3] + data[4:8]
+        	# Pull out the UID
+        	uid_dec = data[0:3] + data[4:8]
 
-        # Convert to Hex
-        uid = []
-        for d in uid_dec:
-            h = format(d, 'x')
-            # Zero pad if single digit number
-            if len(str(h)) < 2:
-                h = '0' + str(h)
-            uid.append(h)
+        	# Convert to Hex
+        	uid = []
+        	for d in uid_dec:
+            		h = format(d, 'x')
+            		# Zero pad if single digit number
+            		if len(str(h)) < 2:
+                	h = '0' + str(h)
+            		uid.append(h)
         
-        # Format UID with colons between bytes
-        print (':').join(uid)
+        	# Format UID with colons between bytes
+        	print (':').join(uid)
+        except:
+            print "Error"
 

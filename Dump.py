@@ -37,9 +37,6 @@ while continue_reading:
     if status == MIFAREReader.MI_OK:
 
         print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
-        
-        # Select the scanned tag
-        #MIFAREReader.MFRC522_SelectTag(uid)
 
         # Dump the data
         MIFAREReader.MFRC522_DumpUltralight(uid)

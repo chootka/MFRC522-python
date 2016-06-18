@@ -87,4 +87,4 @@ while continue_reading:
                 os.system('echo 0 > /sys/class/leds/led0/brightness')
 
         except:
-            print 'reader error'
+            print "Reader Error"
