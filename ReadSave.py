@@ -58,31 +58,30 @@ while continue_reading:
         # Pull out the UID
  	    uid_dec = data[0:3] + data[4:8]
         except:
-	        print 'reader error'
+    print 'reader error'
 
         # Convert to Hex, Zero pad if single digit number
         uid = []
         for d in uid_dec:
-            h = format(d, 'x')
-        if len(str(h)) < 2:
-            h = '0' + str(h)
+        h = format(d, 'x')
+    if len(str(h)) < 2:
+        h = '0' + str(h)
             uid.append(h)
 
-        # Prevents multiple readings of same UID
-	    if store_uid != uid:
-            uid_str = ('').join(uid)
-	        print uid_str
+    # Prevents multiple readings of same UID
+	if store_uid != uid:
+        uid_str = ('').join(uid)
+	print uid_str
 
-        # Flash ON the on-board green LED
-	    os.system('echo 1 > /sys/class/leds/led0/brightness')
+    # Flash ON the on-board green LED
+	os.system('echo 1 > /sys/class/leds/led0/brightness')
 
-        # Write UID to output file
-	    with open(mugs_filename, 'a') as the_file:
-		    the_file.write(uid_str + '\n')
-	        os.system('sync')
-	        print (':').join(uid)
-	        store_uid = uid
-        # Flash OFF the on-board green LED after 1 second delay
-	    time.sleep(1)
-	    os.system('echo 0 > /sys/class/leds/led0/brightness')
-
+    # Write UID to output file
+	with open(mugs_filename, 'a') as the_file:
+		the_file.write(uid_str + '\n')
+	os.system('sync')
+	print (':').join(uid)
+	    store_uid = uid
+    # Flash OFF the on-board green LED after 1 second delay
+	time.sleep(1)
+	os.system('echo 0 > /sys/class/leds/led0/brightness')
