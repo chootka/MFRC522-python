@@ -64,9 +64,9 @@ while continue_reading:
         uid = []
         for d in uid_dec:
             h = format(d, 'x')
-	        if len(str(h)) < 2:
-	            h = '0' + str(h)
-                uid.append(h)
+        if len(str(h)) < 2:
+            h = '0' + str(h)
+            uid.append(h)
 
         # Prevents multiple readings of same UID
 	    if store_uid != uid:
