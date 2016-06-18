@@ -383,7 +383,8 @@ class MFRC522:
 
   def MFRC522_DumpUltralight(self, uid):
     i = 0
-    while i < 64:
+    #while i < 64:
+    while i < 256:
         self.MFRC522_Read(i)
         i = i+1
 
