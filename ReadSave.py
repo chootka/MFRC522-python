@@ -68,10 +68,10 @@ while continue_reading:
                 h = '0' + str(h)
                 uid.append(h)
 
-    # Prevents multiple readings of same UID
-	if store_uid != uid:
-        uid_str = ('').join(uid)
-	print uid_str
+        # Prevents multiple readings of same UID
+    	if store_uid != uid:
+            uid_str = ('').join(uid)
+    	print uid_str
 
     # Flash ON the on-board green LED
 	os.system('echo 1 > /sys/class/leds/led0/brightness')
