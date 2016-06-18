@@ -64,7 +64,7 @@ while continue_reading:
                 h = format(d, 'x')
                 if len(str(h)) < 2:
                     h = '0' + str(h)
-                    uid.append(h)
+                uid.append(h)
             print uid
 
             # Prevents multiple writings of same UID to config.txt
