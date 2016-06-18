@@ -57,7 +57,7 @@ while continue_reading:
 
             # Pull out the UID
             uid_dec = data[0:3] + data[4:8]
-
+            print uid_dec
             # Convert to Hex, Zero pad if single digit number
             uid = []
             for d in uid_dec:
@@ -66,7 +66,7 @@ while continue_reading:
                     h = '0' + str(h)
                     uid.append(h)
             print uid
-            
+
             # Prevents multiple writings of same UID to config.txt
             if store_uid != uid:
                 uid_str = ('').join(uid)
