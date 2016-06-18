@@ -76,7 +76,7 @@ while continue_reading:
 
             # Write UID to output file
             with open(mugs_filename, 'a') as the_file:
-            the_file.write(uid_str + '\n')
+                the_file.write(uid_str + '\n')
 
             os.system('sync')
             print (':').join(uid)
@@ -84,6 +84,6 @@ while continue_reading:
             # Flash OFF the on-board green LED after 1 second delay
             time.sleep(1)
             os.system('echo 0 > /sys/class/leds/led0/brightness')
-        
+
         except:
             print 'reader error'
