@@ -63,10 +63,10 @@ while continue_reading:
         # Convert to Hex, Zero pad if single digit number
         uid = []
         for d in uid_dec:
-        h = format(d, 'x')
-    if len(str(h)) < 2:
-        h = '0' + str(h)
-            uid.append(h)
+            h = format(d, 'x')
+            if len(str(h)) < 2:
+                h = '0' + str(h)
+                uid.append(h)
 
     # Prevents multiple readings of same UID
 	if store_uid != uid:
