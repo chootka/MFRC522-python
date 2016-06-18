@@ -71,19 +71,19 @@ while continue_reading:
                 uid_str = ('').join(uid)
                 print uid_str
 
-            # Flash ON the on-board green LED
-            os.system('echo 1 > /sys/class/leds/led0/brightness')
+                # Flash ON the on-board green LED
+                os.system('echo 1 > /sys/class/leds/led0/brightness')
 
-            # Write UID to output file
-            with open(mugs_filename, 'a') as the_file:
-                the_file.write(uid_str + '\n')
+                # Write UID to output file
+                with open(mugs_filename, 'a') as the_file:
+                    the_file.write(uid_str + '\n')
 
-            os.system('sync')
-            print (':').join(uid)
+                os.system('sync')
+                print (':').join(uid)
                 store_uid = uid
-            # Flash OFF the on-board green LED after 1 second delay
-            time.sleep(1)
-            os.system('echo 0 > /sys/class/leds/led0/brightness')
+                # Flash OFF the on-board green LED after 1 second delay
+                time.sleep(1)
+                os.system('echo 0 > /sys/class/leds/led0/brightness')
 
         except:
             print 'reader error'
