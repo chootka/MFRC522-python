@@ -335,6 +335,9 @@ class MFRC522:
     pOut = self.CalulateCRC(recvData)
     recvData.append(pOut[0])
     recvData.append(pOut[1])
+    print "Status: "+status
+    print "backData: "+backData
+    print "backLen: "+backLen
     (status, backData, backLen) = self.MFRC522_ToCard(self.PCD_TRANSCEIVE, recvData)
     if not(status == self.MI_OK):
       print "Error while reading!"
