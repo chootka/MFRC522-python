@@ -60,11 +60,10 @@ while continue_reading:
         except:
 	        print 'reader error'
 
-        # Convert to Hex
+        # Convert to Hex, Zero pad if single digit number
         uid = []
         for d in uid_dec:
             h = format(d, 'x')
-            # Zero pad if single digit number
 	        if len(str(h)) < 2:
 	            h = '0' + str(h)
                 uid.append(h)
