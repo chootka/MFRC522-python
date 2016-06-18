@@ -340,8 +340,8 @@ class MFRC522:
       print "Error while reading!"
     i = 0
     if len(backData) == 16:
-      print "Sector "+str(blockAddr)+" "+str(backData)
-  
+      return blockAddr, backData 
+ 
   def MFRC522_Write(self, blockAddr, writeData):
     buff = []
     buff.append(self.PICC_WRITE)
@@ -378,6 +378,12 @@ class MFRC522:
             self.MFRC522_Read(i)
         else:
             print "Authentication error"
+        i = i+1
+  
+  def MFRC522_DumpUltralight(self, uid):
+    i = 0
+    while i < 256:
+        self.MFRC522_Read(i)
         i = i+1
 
   def MFRC522_Init(self):

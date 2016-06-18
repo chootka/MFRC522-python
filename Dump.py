@@ -20,7 +20,7 @@ signal.signal(signal.SIGINT, end_read)
 # Create an object of the class MFRC522
 MIFAREReader = MFRC522.MFRC522()
 
-# This loop keeps checking for chips. If one is near it will get the UID and authenticate
+# This loop keeps checking for chips. If one is near it will get the UID
 while continue_reading:
     
     # Scan for cards    
@@ -39,14 +39,19 @@ while continue_reading:
         # Print UID
         print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
     
-        # This is the default key for authentication
-        key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
+        # DISABLED we are only working w/Ultralight tags
+        # This is the default key for authentication.
+        #key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
         
         # Select the scanned tag
         MIFAREReader.MFRC522_SelectTag(uid)
 
         # Dump the data
-        MIFAREReader.MFRC522_DumpClassic1K(key, uid)
-
+        MIFAREReader.MFRC522_DumpUltralight(uid)
+        
+        # DISABLED we are only working w/Ultralight tags
+        #MIFAREReader.MFRC522_DumpClassic1K(key, uid)
+    
+        # DISABLED we are only working w/Ultralight tags
         # Stop
-        MIFAREReader.MFRC522_StopCrypto1()
+        #MIFAREReader.MFRC522_StopCrypto1()
