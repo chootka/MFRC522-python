@@ -5,6 +5,8 @@ A small class to interface with the NFC reader Module MFRC522 on the Raspberry P
 
 This is a Python port of the example code for the NFC module MF522-AN.
 
+Has been altered to work with (and only with) Mifare Ultralight tags (including NTAG213).
+
 ##Requirements
 This code requires you to have SPI-Py installed from the following repository:
 https://github.com/lthiery/SPI-Py
