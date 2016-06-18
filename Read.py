@@ -56,7 +56,7 @@ while continue_reading:
             		h = format(d, 'x')
             		# Zero pad if single digit number
             		if len(str(h)) < 2:
-                	h = '0' + str(h)
+                		h = '0' + str(h)
             		uid.append(h)
         
         	# Format UID with colons between bytes
