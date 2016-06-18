@@ -56,7 +56,7 @@ while continue_reading:
             # Zero pad if single digit number
             if len(str(h)) < 2:
                 h = '0' + str(h)
-                uid.append(h)
+            uid.append(h)
         
         # Format UID with colons between bytes
         print (':').join(uid)
