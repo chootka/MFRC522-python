@@ -55,8 +55,8 @@ while continue_reading:
         try:
             (block, data) = MIFAREReader.MFRC522_Read(256)
 
-            # Pull out the UID
- 	        uid_dec = data[0:3] + data[4:8]
+        # Pull out the UID
+ 	    uid_dec = data[0:3] + data[4:8]
         except:
 	        print 'reader error'
 
