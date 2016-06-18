@@ -58,7 +58,7 @@ while continue_reading:
         # Pull out the UID
  	    uid_dec = data[0:3] + data[4:8]
         except:
-        print 'reader error'
+            print 'reader error'
 
         # Convert to Hex, Zero pad if single digit number
         uid = []
