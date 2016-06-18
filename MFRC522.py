@@ -369,6 +369,17 @@ class MFRC522:
         if status == self.MI_OK:
             print "Data written"
 
+  def MFRC522_DumpClassic1K(self, key, uid):
+    i = 0
+    while i < 64:
+        status = self.MFRC522_Auth(self.PICC_AUTHENT1A, i, key, uid)
+        # Check if authenticated
+        if status == self.MI_OK:
+            self.MFRC522_Read(i)
+        else:
+            print "Authentication error"
+        i = i+1
+
   def MFRC522_DumpUltralight(self, uid):
     i = 0
     while i < 64:

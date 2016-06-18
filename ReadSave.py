@@ -53,7 +53,7 @@ while continue_reading:
     
         try:
             # Read all 16 pages of Ultralight card
-            (block, data) = MIFAREReader.MFRC522_Read(256)
+            (block, data) = MIFAREReader.MFRC522_Read(64)
 
             # Pull out the UID
             uid_dec = data[0:3] + data[4:8]
