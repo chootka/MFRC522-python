@@ -67,6 +67,8 @@ while continue_reading:
                     uid.append(h)
 
             # Prevents multiple writings of same UID to config.txt
+            print "store_uid: "+store_uid
+            print "uid: "+uid
             if store_uid != uid:
                 uid_str = ('').join(uid)
                 print uid_str
