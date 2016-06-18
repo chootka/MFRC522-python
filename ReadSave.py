@@ -51,8 +51,8 @@ while continue_reading:
         # Print UID
         print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
     
-        # Read all 16 pages of Ultralight card
         try:
+            # Read all 16 pages of Ultralight card
             (block, data) = MIFAREReader.MFRC522_Read(256)
 
             # Pull out the UID
@@ -66,7 +66,7 @@ while continue_reading:
                     h = '0' + str(h)
                     uid.append(h)
 
-            # Prevents multiple readings of same UID
+            # Prevents multiple writings of same UID to config.txt
             if store_uid != uid:
                 uid_str = ('').join(uid)
                 print uid_str
