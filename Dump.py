@@ -38,20 +38,9 @@ while continue_reading:
 
         # Print UID
         print "Card read UID: "+str(uid[0])+","+str(uid[1])+","+str(uid[2])+","+str(uid[3])
-    
-        # DISABLED we are only working w/Ultralight tags
-        # This is the default key for authentication.
-        #key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
         
         # Select the scanned tag
         MIFAREReader.MFRC522_SelectTag(uid)
 
         # Dump the data
         MIFAREReader.MFRC522_DumpUltralight(uid)
-        
-        # DISABLED we are only working w/Ultralight tags
-        #MIFAREReader.MFRC522_DumpClassic1K(key, uid)
-    
-        # DISABLED we are only working w/Ultralight tags
-        # Stop
-        #MIFAREReader.MFRC522_StopCrypto1()
