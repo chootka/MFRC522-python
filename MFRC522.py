@@ -400,4 +400,8 @@ class MFRC522:
     
     self.Write_MFRC522(self.TxAutoReg, 0x40)
     self.Write_MFRC522(self.ModeReg, 0x3D)
+    #Set Rx Gain to max
+    print "before setting gain: "+self.Read_MFRC522(self.RFCfgReg)
+    self.Write_MFRC522(self.RFCfgReg, (0x07<<4))
+    print "after setting gain: "+self.Read_MFRC522(self.RFCfgReg)
     self.AntennaOn()
